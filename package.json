@@ -1,0 +1,22 @@
+{
+    "name": "boomerang",
+    "version": "0.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "preinstall": "node bin/preinstall.js",
+        "start": "nodemon .",
+        "production": "NODE_ENV=production nodemon .",
+        "test": "tape \"lib/*/test/*-test.js\""
+    },
+    "keywords": [],
+    "author": "Brandon Smith",
+    "license": "MIT",
+    "devDependencies": {
+        "nodemon": "^1.2.1",
+        "tape": "^3.0.0"
+    },
+    "dependencies": {
+        "lodash": "^3.10.1"
+    }
+}
