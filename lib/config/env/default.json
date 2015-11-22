@@ -1,5 +1,15 @@
 {
     "port": 3000,
+    "app": {},
+    "farm": {
+        "maxCallsPerWorker": 10,
+        "maxConcurrentCallsPerWorker": 1,
+        "maxRetries": 5,
+        "autoStart": false,
+        "worker": {
+            "phantom": {}
+        }
+    },
     "log": {
         "level": "info"
     }
