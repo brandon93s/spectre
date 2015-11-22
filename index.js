@@ -1,4 +1,6 @@
-/* main module entry point */
+'use strict';
+
+/* Boomerang Entry Point */
 var cfg = require('_/config'),
     log = require('_/log'),
     app = require('_/app'),
