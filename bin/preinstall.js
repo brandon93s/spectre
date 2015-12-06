@@ -1,3 +1,5 @@
+'use strict';
+
 var fs = require('fs'),
     resolve = require('path').resolve,
     join = require('path').join,
