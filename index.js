@@ -1,7 +1,7 @@
 'use strict';
 
 /* Boomerang Entry Point */
-var cfg = require('_/config'),
+const cfg = require('_/config'),
     debug = require('_/log').debugger('boomerang'),
     app = require('_/app'),
     workerFarm = require('_/farm');
