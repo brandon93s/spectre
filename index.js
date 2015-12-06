@@ -2,11 +2,11 @@
 
 /* Boomerang Entry Point */
 var cfg = require('_/config'),
-    log = require('_/log'),
+    debug = require('_/log').debugger('boomerang'),
     app = require('_/app'),
     workerFarm = require('_/farm');
 
 app.listen(cfg.port);
-log.info('app listening on port', cfg.port);
+debug('app listening on port %s', cfg.port);
 
 workerFarm.boot();
