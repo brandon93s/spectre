@@ -1,12 +1,12 @@
 'use strict';
 
 /* Boomerang Entry Point */
-const cfg = require('_/config'),
+const config = require('_/config'),
     debug = require('_/log').debugger('boomerang'),
     app = require('_/app'),
     workerFarm = require('_/farm');
 
-app.listen(cfg.port);
-debug('app listening on port %s', cfg.port);
+app.listen(config.port);
+debug('app listening on port %s', config.port);
 
 workerFarm.boot();
