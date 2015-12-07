@@ -1,6 +1,8 @@
 {
     "port": 3000,
+    "relative_temporary_directory": ".tmp",
     "app": {},
+    "core": {},
     "farm": {
         "maxCallsPerWorker": 25,
         "maxConcurrentCallsPerWorker": 1,
