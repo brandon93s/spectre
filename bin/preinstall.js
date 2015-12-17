@@ -1,25 +1,31 @@
 'use strict';
 
-var fs = require('fs'),
+const fs = require('fs'),
     resolve = require('path').resolve,
     join = require('path').join,
-    cp = require('child_process'),
-    exec = cp.exec;
+    exec = require('child_process').exec;
 
 // logging helper function
-var msg = function (msg) {
+const msg = function (msg) {
     var div = '=====';
     console.log(div, msg, div, '\n');
 };
 
+// resolve necessary paths
+const lib = resolve(__dirname, '../lib/');
+const node_modules = resolve(__dirname, '../node_modules');
+const symlinkPath = join(node_modules, '_');
 
-var lib = resolve(__dirname, '../lib/');
-var node_modules = resolve(__dirname, '../node_modules');
-var symlinkPath = join(node_modules, '_');
+// make sure node_modules directory exists
+try {
+    fs.mkdirSync(node_modules);
+} catch (e) {
+    if (e.code !== 'EEXIST') throw e;
+}
 
 // setup symlink from node_modules to lib
 fs.lstat(symlinkPath, function (err, stat) {
-    var createSymlink = function () {
+    const createSymlink = function () {
         fs.symlinkSync(lib, symlinkPath, 'dir');
     };
 
@@ -42,7 +48,7 @@ fs.lstat(symlinkPath, function (err, stat) {
 // npm install sub-modules
 fs.readdirSync(lib)
     .forEach(function (mod) {
-        var modPath = join(lib, mod);
+        const modPath = join(lib, mod);
 
         // ensure path has package.json
         if (!fs.existsSync(join(modPath, 'package.json'))) return;
