@@ -2,6 +2,6 @@
     "port": 1337,
     "log": {
         "level": "debug",
-        "debug": "boomerang*"
+        "debug": "spectre*"
     }
 }

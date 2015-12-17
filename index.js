@@ -1,8 +1,8 @@
 'use strict';
 
-/* Boomerang Entry Point */
+/* Spectre Entry Point */
 const config = require('_/config'),
-    debug = require('_/log').debugger('boomerang'),
+    debug = require('_/log').debugger('spectre'),
     app = require('_/app'),
     workerFarm = require('_/farm');
 
