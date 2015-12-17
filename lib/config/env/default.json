@@ -1,18 +1,18 @@
 {
-    "port": 3000,
-    "relative_temporary_directory": ".tmp",
-    "app": {},
-    "core": {},
-    "farm": {
-        "maxCallsPerWorker": 25,
-        "maxConcurrentCallsPerWorker": 1,
-        "maxRetries": 5,
-        "autoStart": false,
-        "worker": {
-            "phantom": {}
-        }
-    },
-    "log": {
-        "level": "info"
-    }
+	"port": 3000,
+	"relative_temporary_directory": ".tmp",
+	"app": {},
+	"core": {},
+	"farm": {
+		"maxCallsPerWorker": 25,
+		"maxConcurrentCallsPerWorker": 1,
+		"maxRetries": 5,
+		"autoStart": false,
+		"worker": {
+			"phantom": {}
+		}
+	},
+	"log": {
+		"level": "info"
+	}
 }
