@@ -1,20 +1,22 @@
 {
-    "name": "Spectre",
-    "version": "0.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "preinstall": "node bin/preinstall.js",
-        "start": "nodemon .",
-        "production": "NODE_ENV=production nodemon ."
-    },
-    "keywords": [],
-    "author": "Brandon Smith",
-    "license": "MIT",
-    "devDependencies": {
-        "nodemon": "^1.2.1"
-    },
-    "dependencies": {
-        "lodash": "^3.10.1"
-    }
+	"name": "Spectre",
+	"version": "0.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"preinstall": "node bin/preinstall.js",
+		"start": "nodemon .",
+		"production": "NODE_ENV=production nodemon .",
+		"test": "ava"
+	},
+	"keywords": [],
+	"author": "Brandon Smith",
+	"license": "MIT",
+	"devDependencies": {
+		"ava": "^0.8.0",
+		"nodemon": "^1.2.1"
+	},
+	"dependencies": {
+		"lodash": "^3.10.1"
+	}
 }
