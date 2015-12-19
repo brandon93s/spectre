@@ -2,6 +2,7 @@
 
 >
 
+##### NOTE: Project under rapid development. Spectre should be considered unstable. All APIs are non-final. 
 
 ## Install
 
