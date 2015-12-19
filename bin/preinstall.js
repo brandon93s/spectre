@@ -1,32 +1,46 @@
 'use strict';
 
+/* Preinstall Dependencies */
 const fs = require('fs');
-const resolve = require('path').resolve;
-const join = require('path').join;
+const path = require('path');
+const resolve = path.resolve;
+const join = path.join;
 const exec = require('child_process').exec;
 
-// logging helper function
+/* Helpers */
 const msg = function (msg) {
   var div = '=====';
   console.log(div, msg, div, '\n');
 };
 
-// resolve necessary paths
+const exit = function () {
+  msg('Exiting...');
+  process.exit(1);
+};
+
+/* Resolve Paths */
 const lib = resolve(__dirname, '../lib/');
 const node_modules = resolve(__dirname, '../node_modules');
 const symlinkPath = join(node_modules, '_');
 
-// make sure node_modules directory exists
+/* Check node_modules */
 try {
   fs.mkdirSync(node_modules);
 } catch (e) {
   if (e.code !== 'EEXIST') throw e;
 }
 
-// setup symlink from node_modules to lib
+/* Create Symkink node_modules -> lib */
 fs.lstat(symlinkPath, function (err, stat) {
   const createSymlink = function () {
-    fs.symlinkSync(lib, symlinkPath, 'dir');
+    try {
+      fs.symlinkSync(lib, symlinkPath, 'dir');
+    } catch (e) {
+      if (e.code !== 'EPERM') throw e;
+      msg('Insufficient Permissions to Create Symlink...');
+      msg('Try Again with Elevated Permissions...');
+      exit();
+    }
   };
 
   if (err) {
@@ -45,7 +59,7 @@ fs.lstat(symlinkPath, function (err, stat) {
   }
 });
 
-// npm install sub-modules
+/* Install Sub-module Dependencies */
 fs.readdirSync(lib)
   .forEach(function (mod) {
     const modPath = join(lib, mod);
@@ -59,11 +73,8 @@ fs.readdirSync(lib)
       cwd: modPath,
     }, function (error, stdout, stderr) {
 
-      msg('Installing ' + mod + ' dependencies...');
+      msg('Installing "' + mod + '" Dependencies...');
 
-      if (stdout) {
-        console.log('stdout: ' + stdout);
-      }
       if (stderr) {
         console.log('stderr: ' + stderr);
       }
