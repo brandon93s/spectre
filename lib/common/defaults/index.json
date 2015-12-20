@@ -1,5 +1,7 @@
 {
   "format": "png",
   "quality": "100",
-  "mode": "auto"
+  "mode": "auto",
+  "width": 1366,
+  "height": 768
 }
