@@ -9,7 +9,7 @@ const exec = require('child_process').exec;
 
 /* Helpers */
 const msg = function (msg) {
-  var div = '=====';
+  const div = '=====';
   console.log(div, msg, div, '\n');
 };
 
