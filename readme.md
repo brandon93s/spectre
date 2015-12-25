@@ -9,25 +9,103 @@
 
 > Highly concurrent, extensively configurable, necessarily stable export server   :ghost:
 
-
 ## Install
 
+#### External Dependencies
+
+###### Required
+- Node.js >= [4.2.x](https://nodejs.org/en/download/)
+- PhantomJS<sup> 1</sup> >= [2.x](http://phantomjs.org/download.html)
+
+###### Optional
+- PDFtk<sup> 1</sup> >= [2.x](https://www.pdflabs.com/tools/pdftk-server/) - only required for merging bulk pdf request into a single pdf
+
+<sub>1: this dependency must be either (1) available directly in your path OR (2) the absolute path to the executable provided in the config </sub>
+
+
+#### Clone
 ```
-// todo
+git clone https://github.com/brandon93s/spectre.git
+cd spectre
+```
+#### Install Node Modules
+
+```
+npm install
 ```
 
 
 ## Usage
 
-```js
-// todo
+```
+// start spectre
+npm start
+
+// run tests
+npm test
+```
+
+## Examples
+###### GET
+```
+// screenshot of github.com
+GET /?url=http://github.com
+```
+```
+// custom viewport size
+GET /?url=http://github.com&width=700&height=450
+```
+```
+// non-default file type
+GET /?url=http://github.com&format=pdf
+```
+###### POST
+```
+// delay rendering 3 seconds
+POST /
+{
+	"url" : "http://github.com",
+	"mode": "delay",
+	"delay": 3000
+}
+```
+```
+// bulk request
+POST /
+{
+	"format" : "pdf",
+	"width": 1920,
+	"height": 750,
+	"paperSize": {
+  		format: 'Letter',
+  		orientation: 'landscape',
+  		margin: '1cm'
+	},
+	"items": [{
+		"url" : "http://github.com"
+	},{
+		"url" : "https://atom.io/",
+		"mode" : "delay",
+		"delay" : 350
+	},{
+		"url" : "https://travis-ci.org/",
+		width: 1000
+	}]
+}
 ```
 
 
+## Documentation
+
+```
+// todo
+```
+
 ## API
 
-//todo
-
+```
+// todo
+```
 
 ## License
 
