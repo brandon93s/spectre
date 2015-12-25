@@ -49,22 +49,22 @@ npm test
 ###### GET
 ```
 // screenshot of github.com
-GET /?url=http://github.com
+GET /?url=github.com
 ```
 ```
 // custom viewport size
-GET /?url=http://github.com&width=700&height=450
+GET /?url=github.com&width=700&height=450
 ```
 ```
 // non-default file type
-GET /?url=http://github.com&format=pdf
+GET /?url=github.com&format=pdf
 ```
 ###### POST
 ```
 // delay rendering 3 seconds
 POST /
 {
-	"url" : "http://github.com",
+	"url" : "github.com",
 	"mode": "delay",
 	"delay": 3000
 }
@@ -82,13 +82,13 @@ POST /
   		margin: '1cm'
 	},
 	"items": [{
-		"url" : "http://github.com"
+		"url" : "github.com"
 	},{
-		"url" : "https://atom.io/",
+		"url" : "atom.io",
 		"mode" : "delay",
 		"delay" : 350
 	},{
-		"url" : "https://travis-ci.org/",
+		"url" : "travis-ci.org",
 		width: 1000
 	}]
 }

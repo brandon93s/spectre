@@ -11,7 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "joi": "^7.0.0",
-    "normalize-url": "^1.4.0",
     "prepend-http": "^1.0.3"
   }
 }
