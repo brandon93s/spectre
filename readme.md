@@ -258,6 +258,7 @@ The password used for HTTP Authentication
 ##### timeout - web page request timeout
 ##### requestMethod - allow user to choose GET, POST, PUT, etc.
 ```
+
 ## License
 
 MIT © [Brandon Smith](https://github.com/brandon93s)
