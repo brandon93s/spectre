@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "joi": "^7.0.0",
-    "prepend-http": "^1.0.3"
+    "joi": "^9.2.0",
+    "prepend-http": "^1.0.4"
   }
 }

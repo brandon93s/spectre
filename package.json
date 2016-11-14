@@ -13,11 +13,11 @@
   "author": "Brandon Smith",
   "license": "MIT",
   "devDependencies": {
-    "ava": "^0.8.0",
-    "nodemon": "^1.2.1"
+    "ava": "^0.16.0",
+    "nodemon": "^1.11.0"
   },
   "dependencies": {
-    "bluebird": "^3.3.4",
-    "lodash": "^3.10.1"
+    "bluebird": "^3.4.6",
+    "lodash": "^4.16.6"
   }
 }
