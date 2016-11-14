@@ -14,7 +14,7 @@
 #### External Dependencies
 
 ###### Required
-- Node.js >= [4.2.x](https://nodejs.org/en/download/)
+- Node.js >= [5.0.x](https://nodejs.org/en/download/)
 - PhantomJS<sup> 1</sup> >= [2.x](http://phantomjs.org/download.html)
 
 ###### Optional
