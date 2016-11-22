@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "phantom": "^3.0.3",
+    "phantom": "^3.1.0",
     "worker-farm": "^1.3.1"
   }
 }
