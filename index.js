@@ -6,7 +6,8 @@ const debug = require('_/log').debugger('spectre');
 const app = require('_/app');
 const workerFarm = require('_/farm');
 
-app.listen(config.port);
+var server = app.listen(config.port);
+server.timeout = config.timeout;
 debug('app listening on port %s', config.port);
 
 workerFarm.boot();
