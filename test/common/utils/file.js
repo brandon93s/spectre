@@ -2,15 +2,15 @@
 
 import test from 'ava';
 import file from '_/common/utils/file';
+import path from 'path';
 
 test('Full handles string and extension input', t => {
   const input = 'inputstring';
   const extension = 'extension';
-  const fileName = `${input}.${extension}`;
+  const expected = `${input}.${extension}`;
   const output = file.full(input, extension);
-  const outputParts = output.split('\\');
 
-  t.is(outputParts[outputParts.length - 1], fileName);
+  t.is(path.basename(output), expected);
 });
 
 test('Full throws on string input without extension', t => {
@@ -27,10 +27,9 @@ test('Full handles message input', t => {
   };
 
   const output = file.full(msg);
-  const outputParts = output.split('\\');
   const expected = 'f89d40683cbaf7312c5b547f253be547.pdf';
 
-  t.is(outputParts[outputParts.length - 1], expected);
+  t.is(path.basename(output), expected);
 });
 
 test('Full handles array input', t => {
@@ -38,12 +37,12 @@ test('Full handles array input', t => {
     format: 'pdf',
     param: 'value'
   };
+
   const msgArray = [msg, msg, msg];
   const output = file.full(msgArray);
-  const outputParts = output.split('\\');
   const expected = '59c7855ba29eb2ff6f0fb5677689c8b8.pdf';
 
-  t.is(outputParts[outputParts.length - 1], expected);
+  t.is(path.basename(output), expected);
 });
 
 test('Name handles object and extension input', t => {
@@ -53,10 +52,9 @@ test('Name handles object and extension input', t => {
   };
 
   const output = file.name(msg, msg.format);
-  const outputParts = output.split('\\');
   const expected = 'f89d40683cbaf7312c5b547f253be547.pdf';
 
-  t.is(outputParts[outputParts.length - 1], expected);
+  t.is(path.basename(output), expected);
 });
 
 test('Name generates unique output', t => {
