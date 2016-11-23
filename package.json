@@ -7,7 +7,7 @@
     "preinstall": "node bin/preinstall.js",
     "start": "nodemon .",
     "production": "NODE_ENV=production nodemon .",
-    "test": "ava test/**/**.js"
+    "test": "ava"
   },
   "keywords": [],
   "author": "Brandon Smith",

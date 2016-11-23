@@ -7,5 +7,5 @@ test.beforeEach(t => {
 });
 
 test('App starts successfully', t => {
-  t.ok(t.context);
+  t.truthy(t.context);
 });
